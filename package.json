@@ -179,6 +179,7 @@
     "yallist": "^4.0.0",
     "yocto-queue": "^0.1.0"
   },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./node_modules/nodemon/bin/nodemon.js backend.js"
