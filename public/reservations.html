@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/repage.css" />
+    <title>Reservation</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="navigation-container">
+        <div class="nav-box"><a href="reservations.html">Reservations</a></div>
+        <div class="nav-box" id="information">Information</div>
+        <div class="nav-box" id="menu">Menu</div>
+        <div class="nav-box" id="team">Team</div>
+      </div>
+      <img src="img/inkl.jpg" alt="Ink Painting" id="ink-painting" />
+      </div>
+    <div class="reservation-form">
+      <h1>Make a Reservation</h1>
+      <form id="reservation-form" method="post" action="/submit-reservation">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="date">Select a Date:</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="form-group">
+          <label for="time">Select a Time:</label>
+          <input type="time" id="time" name="time" required />
+        </div>
+        <div class="form-group">
+          <label for="people">Number of People:</label>
+          <input type="number" id="people" name="people" min="1" required />
+        </div>
+        <button type="submit">Reserve</button>
+      </form>
+
+      <!-- Reservation Lookup Section -->
+      <h2>Check Reservation</h2>
+      <form id="lookup-form" method="get">
+        <div class="form-group">
+          <label for="lookup-name">Your Name:</label>
+          <input type="text" id="lookup-name" name="lookup-name" required />
+        </div>
+        <div class="form-group">
+          <label for="lookup-phone">Phone Number:</label>
+          <input type="tel" id="lookup-phone" name="lookup-phone" required />
+        </div>
+        <button type="submit">Check</button>
+      </form>
+
+      <div id="reservation-details">
+        <!-- Reservation details will be displayed here -->
+      </div>
+      <div id="reservation-details"></div>
+    </div>
+    
+    <script src="js/submit.js"></script>
+  </body>
+</html>
