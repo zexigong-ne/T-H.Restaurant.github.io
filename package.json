@@ -1,6 +1,7 @@
 {
-  "name": "project2",
+  "name": "pj2",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "Amidst the rapidly changing realm of the culinary world, where ease intersects with gastronomic delight, restaurant reservation platforms stand out as transformative tools.",
   "main": "backend.js",
   "dependencies": {
@@ -166,4 +167,27 @@
   "author": "",
   "license": "ISC",
   "keywords": []
+=======
+  "description": "project2",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./node_modules/nodemon/bin/nodemon.js app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peng",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "eslint-plugin-prettier": "^5.0.0",
+    "express": "^4.18.2",
+    "mangodb": "^1.0.0",
+    "mongodb": "^6.1.0",
+    "prettier": "^3.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "nodemon": "^3.0.1"
+  }
+>>>>>>> refs/remotes/origin/main
 }
