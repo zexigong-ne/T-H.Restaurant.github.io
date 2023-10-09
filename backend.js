@@ -1,15 +1,14 @@
 import express from "express";
 
+import apiRounter from "./routes/routes.js";
+
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.get("/prompts", (req, res) => {
-  console.log("should return prompts");
-  res.send("Hello!");
-});
+app.use("/rountes", apiRounter);
 
 app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
+    console.log(`listening on port ${PORT}`);
 });
 

@@ -1,7 +1,12 @@
 import express from "express";
 import { getReservations, submitReservation } from "../db/mydb.js";
 
+export const rounter = express.Router();
+
 const router = express.Router();
+
+
+
 
 // Handle form submission
 
@@ -15,7 +20,7 @@ router.post("/submit-reservation", async (req, res) => {
     console.log("Date:", date);
     console.log("Time:", time);
     console.log("People:", people);
-    console.log("Special:", special)
+    console.log("Special:", special);
 
     // Call your submitReservation function to insert data into MongoDB
     await submitReservation(name, phone, date, time, people, special);
