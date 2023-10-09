@@ -14,7 +14,7 @@ export const connectDatabase = async () => {
     }
 };
 
-export const submitReservation = async (name, phone, date, time, people) => {
+export const submitReservation = async (name, phone, date, time, people,special) => {
     try {
         const { db, client } = await connectDatabase();
 
@@ -24,7 +24,8 @@ export const submitReservation = async (name, phone, date, time, people) => {
             phone: phone,
             date: date,
             time: time,
-            people: people
+            people: people,
+            special: special
         });
 
         client.close();

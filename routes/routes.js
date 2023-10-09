@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post("/submit-reservation", async (req, res) => {
   try {
-    const { name, phone, date, time, people } = req.body;
+    const { name, phone, date, time, people, special } = req.body;
 
     console.log("Received data from the client:");
     console.log("Name:", name);
@@ -15,9 +15,10 @@ router.post("/submit-reservation", async (req, res) => {
     console.log("Date:", date);
     console.log("Time:", time);
     console.log("People:", people);
+    console.log("Special:", special)
 
     // Call your submitReservation function to insert data into MongoDB
-    await submitReservation(name, phone, date, time, people);
+    await submitReservation(name, phone, date, time, people, special);
     res.status(201).send("Reservation submitted successfully.");
   } catch (error) {
     console.error(error);

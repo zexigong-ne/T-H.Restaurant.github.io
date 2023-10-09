@@ -9,12 +9,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const date = document.getElementById("date").value;
     const time = document.getElementById("time").value;
     const people = document.getElementById("people").value;
+    const special = document.getElementById("special").value;
 
     console.log("Name:", name);
     console.log("Phone:", phone);
     console.log("Date:", date);
     console.log("Time:", time);
     console.log("People:", people);
+    console.log("Special:", special);
 
     try {
       // Use fetch API to send a POST request to your server to submit the reservation
@@ -23,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, phone, date, time, people }),
+        body: JSON.stringify({ name, phone, date, time, people, special }),
       });
       if (response.ok) {
         // Reservation submitted successfully
@@ -75,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <p>Date: ${reservation.date}</p>
                             <p>Time: ${reservation.time}</p>
                             <p>People: ${reservation.people}</p>
+                            <p>Special: ${reservation.special}</p>
                             <hr>
                         `;
             })
