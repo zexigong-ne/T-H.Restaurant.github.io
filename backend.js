@@ -1,13 +1,15 @@
 import express from "express";
-const express = require('express')
-const app = express()
-const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello!')
-})
+const app = express();
 
-app.listen(port, () => {
-  console.log(`listening on port ${port}`)
-})
+const PORT = process.env.PORT || 3000;
+
+app.get("/prompts", (req, res) => {
+  console.log("should return prompts");
+  res.send("Hello!");
+});
+
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
+});
 
