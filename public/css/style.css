@@ -284,6 +284,28 @@ section {
   color: #333; /* Dark text color */
 }
 
+/* Styling for the course name/title */
+.Menu .Greens-1 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+/* Styling for the course name/title */
+.Menu .Greens-2 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+/* Styling for the course name/title */
+.Menu .Greens-3 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+
 .Menu .card-body {
   padding: 20px;
   font-size: 1em;
