@@ -365,6 +365,8 @@ section {
     text-align: center;
     box-shadow: 0 0 10px rgba(214, 215, 216, 0.6);
     font-size: 14PX;
+    display: flex;
+    flex-direction: row;
 
 }
 
