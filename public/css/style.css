@@ -316,9 +316,23 @@ section {
   border-top-left-radius: 10px; /* rounded corners for the top-left side of image */
   border-top-right-radius: 10px; /* rounded corners for the top-right side of image */
 }
+
 .Menu .card-img {
   width: 50ex;
   height: 50ex;
+}
+
+
+.Menu .card-per-img{
+  max-width: 100%; /* to make sure image doesn't exceed card width */
+  height: auto;
+  border-top-left-radius: 10px; /* rounded corners for the top-left side of image */
+  border-top-right-radius: 10px; /* rounded corners for the top-right side of image */
+}
+
+.Menu .card-per-img {
+  width: 150ex;
+  height: 80ex;
 }
 
 /*--------------------------------------------------------------
