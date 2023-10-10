@@ -7,15 +7,40 @@
     <title>Reservation</title>
   </head>
   <body>
-    <div class="background">
-      <div class="navigation-container">
-        <div class="nav-box"><a href="reservations.html">Reservations</a></div>
-        <div class="nav-box" id="information">Information</div>
-        <div class="nav-box" id="menu">Menu</div>
-        <div class="nav-box" id="team">Team</div>
-      </div>
-      <img src="img/inkl.jpg" alt="Ink Painting" id="ink-painting" />
-      </div>
+       <!-- ======= Header ======= -->
+       <header
+       id="header"
+       class="fixed-top d-flex justify-content-center align-items-center header-transparent"
+     >
+       <!-- ======= Navbar ======= -->
+       <nav id="navbar" class="navbar">
+         <ul>
+           <li><a class="nav-link scrollto active" href="#home">Home</a></li>
+           <li>
+             <a class="nav-link scrollto" href="reservations.html"
+               >Reservations</a
+             >
+           </li>
+           <li>
+             <a class="nav-link scrollto" href="information.html"
+               >Information</a
+             >
+           </li>
+           <li><a class="nav-link scrollto" href="menu.html">Menu</a></li>
+           <li><a class="nav-link scrollto" href="shop.html">Shop</a></li>
+           <li><a class="nav-link scrollto" href="team.html">Team</a></li>
+         </ul>
+       </nav>
+       <!-- .navbar -->
+     </header>
+     <!-- End Header -->
+
+       <!-- ======= Background Section ======= -->
+  <section id="background">
+    <div class="bg-container"></div>
+  </section>
+  <!-- End Background -->
+
     <div class="reservation-form">
       <h1>Make a Reservation</h1>
       <form id="reservation-form" method="post" action="/submit-reservation">
