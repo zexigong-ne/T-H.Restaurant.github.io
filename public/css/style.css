@@ -335,6 +335,24 @@ section {
   height: 80ex;
 }
 
+.Menu .explain {
+  margin: 10px, 10px 10px, 10px; 
+  font-size: 1.25em;
+  text-align: center;
+  color: #333; /* Dark text color */
+}
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* This ensures that the container takes up the full height of the viewport */
+}
+
+iframe {
+  /* Remove default margin from iframe */
+  margin: 0;
+}
+
 /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/
