@@ -1,0 +1,462 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #3e7bc1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3e7bc1;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+#header {
+  z-index: 997;
+  transition: all 0.5s;
+  height: 80px;
+  background: rgba(25, 28, 31, 0.8);
+}
+
+#header.header-transparent {
+  background: transparent;
+}
+
+#header.header-scrolled {
+  height: 60px;
+  background: rgba(25, 28, 31, 0.8);
+}
+
+/*--------------------------------------------------------------
+  # Sections General
+  --------------------------------------------------------------*/
+section {
+  padding: 70px 0;
+}
+
+.section-bg {
+  background-color: white;
+}
+
+.section-title {
+  text-align: center;
+  padding: 30px 0;
+  height: 100px;
+  position: relative;
+}
+
+.section-title span {
+  position: absolute;
+  top: 30px;
+  color: #555e68;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 52px;
+  text-transform: uppercase;
+  line-height: 0;
+}
+
+/*--------------------------------------------------------------
+  # Navigation Bar
+  --------------------------------------------------------------*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  color: #667485;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 12px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover > a {
+  color: #04090e;
+}
+
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*--------------------------------------------------------------
+  # Background Section
+  --------------------------------------------------------------*/
+#background {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/inkl.jpg") top right;
+  background-size: cover;
+  position: relative;
+}
+
+#background:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.65);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#background .bg-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 15px;
+}
+
+#background h1 {
+  margin: 0 0 10px 0;
+  font-size: 64px;
+  font-family: "Satisfy", serif;
+  color: #fff;
+}
+
+#background h2 {
+  color: #eee;
+  margin-bottom: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#background .btn-scroll {
+  transition: 0.4s;
+  color: rgba(255, 255, 255, 0.6);
+  animation: up-down 1s ease-in-out infinite alternate-reverse both;
+}
+
+#background .btn-scroll i {
+  font-size: 48px;
+}
+
+#background .btn-scroll:hover {
+  color: #ffb727;
+}
+
+@media (min-width: 1024px) {
+  #background {
+    background-attachment: fixed;
+  }
+}
+
+
+/*------------------------------------------------------
+  # Courses
+  --------------------------------------------------------*/
+.Menu .Courses {
+  padding: 20px;
+}
+
+.Menu .card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow to lift the card */
+  border-radius: 10px; /* rounded corners */
+  overflow: hidden; /* Ensures content respects rounded corners */
+  background: #fff; /* white background for the card */
+  transition: transform 0.3s; /* smooth hover effect */
+}
+
+.Menu .card:hover {
+  transform: translateY(-10px); /* on hover, move card a bit upwards */
+}
+
+.Menu .card-img-top {
+  max-width: 100%; /* to make sure image doesn't exceed card width */
+  height: auto;
+  border-top-left-radius: 10px; /* rounded corners for the top-left side of image */
+  border-top-right-radius: 10px; /* rounded corners for the top-right side of image */
+}
+
+/* Styling for the course name/title */
+.Menu .Appetizer-1 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+/* Styling for the course name/title */
+.Menu .Appetizer-2 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+/* Styling for the course name/title */
+.Menu .Appetizer-3 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+
+
+/* Styling for the course name/title */
+.Menu .Course-1 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+/* Styling for the course name/title */
+.Menu .Course-2 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+/* Styling for the course name/title */
+.Menu .Course-3 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+/* Styling for the course name/title */
+.Menu .Course-4 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+/* Styling for the course name/title */
+.Menu .Course-5 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+/* Styling for the course name/title */
+.Menu .Course-6 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+/* Styling for the course name/title */
+.Menu .Greens-1 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+/* Styling for the course name/title */
+.Menu .Greens-2 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+/* Styling for the course name/title */
+.Menu .Greens-3 {
+  margin: 16px;
+  font-size: 1.25em;
+  color: #333; /* Dark text color */
+}
+
+
+.Menu .card-body {
+  padding: 20px;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* Styling for Ingredients */
+.Menu .Ingredients h3 {
+  margin-bottom: 16px;
+  color: #666; /* Slightly grayish color */
+}
+
+.Menu .Ingredients ul {
+  padding-left: 20px; /* Space before bullet points */
+}
+
+.Menu .Ingredients li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+
+.Menu .card-img-top {
+  width: 100ex;
+  height: 35ex;
+}
+
+.Menu .card-img{
+  max-width: 100%; /* to make sure image doesn't exceed card width */
+  height: auto;
+  border-top-left-radius: 10px; /* rounded corners for the top-left side of image */
+  border-top-right-radius: 10px; /* rounded corners for the top-right side of image */
+}
+
+.Menu .card-img {
+  width: 50ex;
+  height: 50ex;
+}
+
+
+.Menu .card-per-img{
+  max-width: 100%; /* to make sure image doesn't exceed card width */
+  height: auto;
+  border-top-left-radius: 10px; /* rounded corners for the top-left side of image */
+  border-top-right-radius: 10px; /* rounded corners for the top-right side of image */
+}
+
+.Menu .card-per-img {
+  width: 150ex;
+  height: 80ex;
+}
+
+.Menu .explain {
+  margin: 10px, 10px 10px, 10px; 
+  font-size: 1.25em;
+  text-align: center;
+  color: #333; /* Dark text color */
+}
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* This ensures that the container takes up the full height of the viewport */
+}
+
+iframe {
+  /* Remove default margin from iframe */
+  margin: 0;
+}
+
+.Gifts .form-group {
+  text-align: center;
+}
+
+.Gifts .card button.btn.btn-primary {
+  display: block;
+  margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+#footer {
+  background: url("../img/inkl.jpg") top center no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 80px 0;
+  position: relative;
+}
+
+#footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#footer .container {
+  position: relative;
+}
+
+#footer h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  font-family: "Satisfy", serif;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+#footer p {
+  font-size: 15;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+#footer .social-links {
+  margin: 0 0 40px 0;
+}
+
+#footer .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #489af3;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .social-links a:hover {
+  background: #3e7bc1;
+  color: #fff;
+  text-decoration: none;
+}
+
+#footer .copyright {
+  margin: 0 0 5px 0;
+}
+
+#footer .credits {
+  font-size: 13px;
+}
