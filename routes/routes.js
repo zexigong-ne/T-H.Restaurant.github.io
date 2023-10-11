@@ -4,7 +4,12 @@ import { getReservations, submitReservation } from "../db/mydb.js";
 export const rounter = express.Router();
 
 const router = express.Router();
+import dotenv from 'dotenv';
+dotenv.config();
 
+const MONGODB_URI = process.env.MONGODB_URI;
+
+const client = new MongoClient(MONGODB_URI);
 
 
 
