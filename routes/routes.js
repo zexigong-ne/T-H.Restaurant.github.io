@@ -1,5 +1,5 @@
 import express from "express";
-import { getReservations, submitReservation } from "../db/mydb.js";
+import { getReservations, submitReservation,purchaseGiftCard, checkGiftCardBalance} from "../db/mydb.js";
 import { MongoClient } from 'mongodb';
 export const rounter = express.Router();
 
@@ -48,5 +48,47 @@ router.get("/reservation-details", async (req, res) => {
     res.status(500).send("Error retrieving reservation details.");
   }
 });
+
+// Purchase Gift Card
+router.post('/purchase-gift-card', async (req, res) => {
+  try {
+    const { name, cardNumber, cvv, amount } = req.body;
+  
+    console.log("Received data from the client:");
+    console.log("Name:", name);
+    console.log("Cardnumber:", cardNumber);
+    console.log("cvv:", cvv);
+    console.log("Amount:", amount);
+
+    const result = await purchaseGiftCard(name, cardNumber, cvv, amount);
+
+
+    res.status(201).json(result.ops[0]);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+});
+
+// Check Gift Card Balance
+router.post('/check-balance', async (req, res) => {
+  const { name, cardNumber } = req.body;
+
+  try {
+    const result = await checkGiftCardBalance(name, cardNumber);
+    
+    if (result && result.balance !== undefined) {
+      res.status(200).json(result);
+    } else {
+      res.status(404).send('Card not found');
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal server error');
+  }
+});
+
+
+
+
 
 export default router;
