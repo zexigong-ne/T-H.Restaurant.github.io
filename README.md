@@ -26,7 +26,7 @@ Our solution will integrate a vibrant front-end interface with a robust back-end
 
 
 ### Preview:
-[Homepage]
+[Thumbnail Page]
 <img width="1270" alt="Preview1" src="https://github.com/chuanzhaohuang/T-H.Restaurant.github.io/assets/122564637/8cf0663f-e288-4a23-8bf5-d1d597adee43">
 
 
