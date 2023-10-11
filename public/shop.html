@@ -8,7 +8,7 @@
     <meta content="" name="keywords" />
 
     <!-- css  -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/shop.css" />
 
     <!-- Bootstrap  -->
     <link
@@ -96,7 +96,9 @@
             <!-- / Gift 1 -->
 
             <!-- ======== Gift 2 ======== -->
+
             <div class="Gifts col-4">
+              <div calss="buywhatyouneed">
               <div class="card">
                 <img
                   class="card-img"
@@ -105,22 +107,52 @@
                 />
 
                 <h2 class="Gifts">
-                  <strong>Giftcard </strong>
+                  <strong>Gift Card</strong>
                 </h2>
-
-                <div class="card-body">
-                  <div class="Ingredients">
-                    <h3>Amount:</h3>
-                    <ul>
-                      <li>$50.00</li>
-                      <li>$100.00</li>
-                      <li>$500.00</li>
-                    </ul>
+                <form id="giftCardForm" >
+                  <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required />
                   </div>
+                  <div class="form-group">
+                    <label for="cardNumber">Card Number:</label>
+                    <input type="number" id="cardNumber" name="cardNumber" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="cvv">CVV (Card Verification Value):</label>
+                    <input type="number" id="cvv" name="cvv" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="amount">Gift Card Amount:</label>
+                    <select id="amount" name="amount" required>
+                      <option value="$50.00">$50.00</option>
+                      <option value="$100.00">$100.00</option>
+                      <option value="$500.00">$500.00</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Purchase Gift Card</button>
+                </form>
+                
+                <!-- Check Balance Form -->
+                <form id="checkGiftCardBalanceForm">
+                  <div class="form-group">
+                    <label for="checkName">Name:</label>
+                    <input type="text" id="checkName" name="checkName" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="checkCardNumber">Card Number:</label>
+                    <input type="number" id="checkCardNumber" name="checkCardNumber" required />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Check Balance</button>
+                </form>
+                
+                <div id="card-details-display"  class="check-form">
+                 <!-- Reservation details will be displayed here -->
+                </div>
+                <div id="card-details"></div>
+                </div>
                 </div>
               </div>
-              <!-- / card -->
-            </div>
             <!-- / Gift 2 -->
 
             <!-- ======== Gift 3 ======== -->
@@ -180,7 +212,7 @@
     <!-- End Footer -->
 
     <!-- Template Main JS File -->
-    <script src="./js/script.js"></script>
+    <script src="./js/gift.js"></script>
 
     <!-- icons installation -->
     <script
