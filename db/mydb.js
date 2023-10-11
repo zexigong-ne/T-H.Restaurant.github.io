@@ -1,8 +1,8 @@
 /* eslint-disable no-useless-catch */
 import { MongoClient } from "mongodb";
-
-const MONGODB_URI =
-  "mongodb+srv://tp:4gJ9ppcowd2nUUGo@restaurant.54znbfp.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
+import dotenv from 'dotenv';
+dotenv.config();
+const MONGODB_URI = process.env.MONGODB_URI;
 
 export const connectDatabase = async () => {
   try {
