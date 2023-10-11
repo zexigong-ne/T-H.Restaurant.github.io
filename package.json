@@ -66,7 +66,6 @@
     "forwarded": "^0.2.0",
     "fresh": "^0.5.2",
     "fs.realpath": "^1.0.0",
-    "fsevents": "^2.3.3",
     "function-bind": "^1.1.1",
     "get-intrinsic": "^1.2.1",
     "glob": "^7.2.3",
