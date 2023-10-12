@@ -12,7 +12,7 @@ Instructor: John Alexis Guerra Gómez
 
 ### Author:
 Created By: 
-[Peng Tao](https://github.com/tpwxpk120?tab=repositories) 
+[Peng Tao](https://github.com/tpwxpk120?tab=repositories)  & 
 [Chuanzhao Huang](https://chuanzhaohuang.github.io/)                                                     
 Release: [Homepage](https://t-and-h-restaurant.onrender.com/)  
 
