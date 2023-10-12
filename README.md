@@ -12,7 +12,7 @@ Instructor: John Alexis Guerra Gómez
 
 ### Author:
 Created By: Peng Tao & Chuanzhao Huang                                                     
-Release: [Homepage]([https://T-H.Restaurant.github.io//](https://t-and-h-restaurant.onrender.com/))  
+Release: [Homepage](https://t-and-h-restaurant.onrender.com/)  
 
 ### Project Objective
 Our solution will integrate a vibrant front-end interface with a robust back-end database, offering users and restaurants the most streamlined method for making and managing dine-in reservations.
