@@ -27,10 +27,10 @@ Our solution will integrate a vibrant front-end interface with a robust back-end
 5) Customer Relationship Management: Within the CRM or the profile management system, there would be specific fields or sections dedicated to capturing and storing individual details about customers, including but not limited to their birthdays, food allergies, preferences, and other pertinent information.
 
 ### Instruction to build:
-1)Clone the repository to your local directory:https://github.com/chuanzhaohuang/T-H.Restaurant.github.io.git
-2)Install project dependencies using npm: npm install
-3)Add a .env file example: MONGODB_URI = yoururl
-4)Start the application and it should be running on http://localhost:8000 :   npm start
+1) Clone the repository to your local directory:https://github.com/chuanzhaohuang/T-H.Restaurant.github.io.git .
+2) Install project dependencies using npm: npm install  .
+3) Add a .env file example: MONGODB_URI = yoururl .
+4) Start the application and it should be running on http://localhost:8000 :   npm start.
 
 ### Preview:
 [Thumbnail Page]
