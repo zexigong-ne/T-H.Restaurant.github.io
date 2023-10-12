@@ -33,12 +33,11 @@ Our solution will integrate a vibrant front-end interface with a robust back-end
 
 
 [Reservation Page]
-<img width="1270" alt="Preview2" src="https://github.com/chuanzhaohuang/T-H.Restaurant.github.io/assets/122564637/5c31bcd8-53c9-44e9-be4e-1268215f0de7)
-/6377d988-178a-4a02-9c76-db851cd1ebb1">
+<img width="1270" alt="Preview2" src="https://github.com/chuanzhaohuang/T-H.Restaurant.github.io/assets/122564637/729e1d8a-cfe9-4410-a465-3b8a6cf59dec">
 
 
 [Information Page]
-<img width="1270" alt="Preview3" src="https://github.com/chuanzhaohuang/T-H.Restaurant.github.io/assets/122564637/3f8d6d43-432d-4af1-a510-9025c1fc6fd6">
+<img width="1270" alt="Preview3" src="https://github.com/chuanzhaohuang/T-H.Restaurant.github.io/assets/122564637/662dd7e4-b263-4ec1-9bb8-4b0ae8bf5c58">
 <img width="1270" alt="Preview4" src="https://github.com/chuanzhaohuang/T-H.Restaurant.github.io/assets/122564637/e4b027b9-df06-4acf-8cbe-9aaf9fae881d">
 
 
