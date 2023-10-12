@@ -57,7 +57,7 @@ Our solution will integrate a vibrant front-end interface with a robust back-end
 
 ### Demonstration:
 [Mockup](https://docs.google.com/document/d/17RQF4ABN6HqJwYHl4EsLVVoBOV-0YT8DDsACC_Sw4H0/edit#heading=h.mpy5d4eu62ay)
-[Video](https://)                                                                              
+[Video](https://youtu.be/URpYnqbLtok)                                                                              
 [Slides](https://docs.google.com/presentation/d/14V7Kv8dFN3R6u6h3N2mN6JmTfrlBUOf0hrLQHRGXQ40/edit?usp=sharing)
 
 
