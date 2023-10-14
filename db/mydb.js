@@ -1,7 +1,8 @@
 /* eslint-disable no-useless-catch */
-import { MongoClient } from "mongodb";
+import { MongoClient, ObjectId } from "mongodb";
 import dotenv from 'dotenv';
 dotenv.config();
+
 const MONGODB_URI = process.env.MONGODB_URI;
 
 export const connectDatabase = async () => {
@@ -19,6 +20,21 @@ export const connectDatabase = async () => {
   }
 };
 
+export const connectDel = async () => {
+  try {
+    const client = new MongoClient(MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    await client.connect();
+    const db = client.db();
+
+    return db;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const submitReservation = async (
   name,
   phone,
@@ -29,7 +45,6 @@ export const submitReservation = async (
 ) => {
   try {
     const { db, client } = await connectDatabase();
-
     // Insert reservation into the database
     await db.collection("reservations").insertOne({
       name: name,
@@ -63,42 +78,39 @@ export const getReservations = async (name, phone) => {
   }
 };
 
-export const purchaseGiftCard = async (name, cardNumber, cvv, amount) => {
+export const updateReservation = async (db, name, phone, updatedData) => {
   try {
-    const { db, client } = await connectDatabase();
+    const reservations = db.collection("reservations");
+    const filter = { name, phone };
+    const updateDoc = {
+      $set: updatedData,
+    };
 
-    // Insert gift card purchase details into the database
-    await db.collection("giftCards").insertOne({
-      name: name,
-      cardNumber: cardNumber,
-      cvv: cvv,
-      amount: amount,
-    });
+    const result = await reservations.updateOne(filter, updateDoc);
 
-    client.close();
+    if (result.modifiedCount > 0) {
+      return true; // Indicates success
+    } else {
+      return false; // No documents were updated
+    }
   } catch (error) {
     throw error;
   }
 };
 
-export const checkGiftCardBalance = async (name, cardNumber) => {
-  try {
-    const { db, client } = await connectDatabase();
 
-    // Query the gift card based on "name" and "cardNumber"
-    const giftCard = await db
-      .collection("giftCards")
-      .findOne({ name, cardNumber });
 
-    client.close();
 
-    if (giftCard) {
-      return { balance: giftCard.amount };
-    } else {
-      return { balance: 0 }; // Card not found
-    }
-  } catch (error) {
-    throw error;
-  }
+export const deleteReservation = async (db, name, phone) => {
+  const client = db.client;
+  const reservations = db.collection("reservations");
+
+  const filter = { name, phone };
+
+  const result = await reservations.deleteOne(filter);
+
+  client.close(); 
+
+  return result.deletedCount;
 };
 
