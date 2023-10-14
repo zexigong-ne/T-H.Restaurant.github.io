@@ -1,17 +1,20 @@
 import express from "express";
-import { getReservations, submitReservation,purchaseGiftCard, checkGiftCardBalance} from "../db/mydb.js";
-import { MongoClient } from 'mongodb';
-export const rounter = express.Router();
-
+import {
+  getReservations,
+  submitReservation,
+  updateReservation,
+  deleteReservation,
+  connectDatabase,
+  connectDel,
+} from "../db/mydb.js";
+import { MongoClient } from "mongodb";
 const router = express.Router();
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config();
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
 const client = new MongoClient(MONGODB_URI);
-
-
 
 // Handle form submission
 
@@ -27,8 +30,7 @@ router.post("/submit-reservation", async (req, res) => {
     console.log("People:", people);
     console.log("Special:", special);
 
-    // Call your submitReservation function to insert data into MongoDB
-    await submitReservation(name, phone, date, time, people, special);
+    await submitReservation(name, phone, date, time, people, special);  
     res.status(201).send("Reservation submitted successfully.");
   } catch (error) {
     console.error(error);
@@ -49,46 +51,47 @@ router.get("/reservation-details", async (req, res) => {
   }
 });
 
-// Purchase Gift Card
-router.post('/purchase-gift-card', async (req, res) => {
+// Update Reservation
+router.put("/update-reservation", async (req, res) => {
+  const { name, phone, date, time, people, special } = req.body;
+
   try {
-    const { name, cardNumber, cvv, amount } = req.body;
-  
-    console.log("Received data from the client:");
-    console.log("Name:", name);
-    console.log("Cardnumber:", cardNumber);
-    console.log("cvv:", cvv);
-    console.log("Amount:", amount);
+    const { db, client } = await connectDatabase();
+    console.log("Update data from the mago:");
+    await updateReservation(db, name, phone, {
+      date,
+      time,
+      people,
+      special,
+    });
 
-    const result = await purchaseGiftCard(name, cardNumber, cvv, amount);
-
-
-    res.status(201).json(result.ops[0]);
+    res.status(200).send("Reservation updated successfully");
   } catch (error) {
-    res.status(400).send(error.message);
+    console.error(error);
+    res.status(500).send("Internal server error");
   }
 });
 
-// Check Gift Card Balance
-router.post('/check-balance', async (req, res) => {
-  const { name, cardNumber } = req.body;
+
+// Delete Reservation
+router.post("/delete-reservation", async (req, res) => {
+  const { name, phone } = req.body;
 
   try {
-    const result = await checkGiftCardBalance(name, cardNumber);
-    
-    if (result && result.balance !== undefined) {
-      res.status(200).json(result);
+    const db = await connectDel(); // Get the database object
+    console.log("Delete data from the mago:");
+    const deletedCount = await deleteReservation(db, name, phone);
+
+    if (deletedCount > 0) {
+      res.status(200).send("Reservation deleted successfully");
     } else {
-      res.status(404).send('Card not found');
+      res.status(404).send("Reservation not found");
     }
   } catch (error) {
     console.error(error);
-    res.status(500).send('Internal server error');
+    res.status(500).send("Internal server error");
   }
 });
-
-
-
 
 
 export default router;
