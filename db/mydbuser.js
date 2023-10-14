@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-useless-catch */
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
