@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <p>Special: ${reservation.special}</p>
                             <hr>
                         `;
+                        
             })
             .join("");
           reservationDetailsDiv.innerHTML = reservationInfo;
