@@ -75,16 +75,16 @@ document.addEventListener("DOMContentLoaded", function () {
           time: updatedTime,
           people: updatedPeople,
           special: updatedSpecial,
-         };
+        };
 
         // Use the Fetch API to send a PUT request to update the reservation
         const updateResponse = await fetch(`/update-reservation`, {
-         method: "PUT",
-         headers: {
+          method: "PUT",
+          headers: {
             "Content-Type": "application/json",
-           },
-           body: JSON.stringify(updatedData),
-         });
+          },
+          body: JSON.stringify(updatedData),
+        });
 
         if (updateResponse.ok) {
           // Reservation updated successfully
