@@ -144,7 +144,7 @@ const navbarlinksActive = () => {
     ) {
       navbarlink.classList.add("active");
     } else {
-      navbarlink.classList.remove('active');
+      navbarlink.classList.remove("active");
     }
   });
 };
