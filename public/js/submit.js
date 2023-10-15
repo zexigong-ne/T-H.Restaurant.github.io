@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const reservationForm = document.getElementById("reservation-form");
+  const reservationDetailsDiv = document.getElementById("reservation-details");
   reservationForm.addEventListener("submit", async function (event) {
     event.preventDefault();
-    
+
     // Get form data for submitting the reservation
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
@@ -45,6 +46,107 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  const updateButton = document.getElementById("update-button");
+  updateButton.addEventListener("click", async function (event) {
+    event.preventDefault();
+
+    const existingName = document.getElementById("existing-name").value;
+    const existingPhone = document.getElementById("existing-phone").value;
+
+    // Fetch the current data from the server
+    try {
+      const response = await fetch(
+        `/reservation-details?name=${existingName}&phone=${existingPhone}`
+      );
+      if (response.ok) {
+        const currentData = await response.json();
+
+        // Get the updated data
+        const updatedDate = document.getElementById("updated-date").value;
+        const updatedTime = document.getElementById("updated-time").value;
+        const updatedPeople = document.getElementById("updated-people").value;
+        const updatedSpecial =
+          document.getElementById("updated-special").value;
+
+        // Merge the updated data with the existing data
+        const updatedData = {
+          ...currentData[0], // Assuming there's only one matching reservation
+          date: updatedDate,
+          time: updatedTime,
+          people: updatedPeople,
+          special: updatedSpecial,
+         };
+
+        // Use the Fetch API to send a PUT request to update the reservation
+        const updateResponse = await fetch(`/update-reservation`, {
+         method: "PUT",
+         headers: {
+            "Content-Type": "application/json",
+           },
+           body: JSON.stringify(updatedData),
+         });
+
+        if (updateResponse.ok) {
+          // Reservation updated successfully
+          console.log("Reservation updated successfully.");
+
+          // Clear the update form fields
+          document.getElementById("update-form").reset();
+        } else {
+          // Handle error (e.g., show an error message)
+          console.error("Error updating reservation.");
+        }
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  });
+
+
+
+  // Add a click event listener to the "Delete" button
+  const deleteButton = document.getElementById("delete-button");
+  deleteButton.addEventListener("click", onDeleteReservation);
+
+  async function onDeleteReservation(event) {
+    event.preventDefault();
+
+    console.log("Delete button clicked"); // Debugging message
+
+    // Get the reservation name and phone for deletion
+    const deleteName = document.getElementById("delete-name").value;
+    const deletePhone = document.getElementById("delete-phone").value;
+
+    console.log("Delete Name:", deleteName); // Debugging message
+    console.log("Delete Phone:", deletePhone); // Debugging message
+
+    try {
+      // Use fetch API to send a DELETE request to your server to delete the reservation
+      const response = await fetch("/delete-reservation", {
+        method: "POST", // Change this to POST to handle deletion by name and phone
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: deleteName, phone: deletePhone }),
+      });
+
+      if (response.ok) {
+        // Reservation deleted successfully
+        console.log("Reservation deleted successfully.");
+
+        // Clear the delete form fields
+        document.getElementById("delete-form").reset();
+      } else {
+        // Handle error (e.g., show an error message)
+        console.error("Error deleting reservation.");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+
+
   // Add a click event listener to the "Check" button
   const checkButton = document.querySelector(
     "#lookup-form button[type='submit']"
@@ -80,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             <p>Special: ${reservation.special}</p>
                             <hr>
                         `;
-                        
             })
             .join("");
           reservationDetailsDiv.innerHTML = reservationInfo;
@@ -108,8 +209,8 @@ const select = (el, all = false) => {
 };
 
 /**
-   * Easy event listener function
-   */
+ * Easy event listener function
+ */
 const on = (type, el, listener, all = false) => {
   let selectEl = select(el, all);
   if (selectEl) {
@@ -122,15 +223,15 @@ const on = (type, el, listener, all = false) => {
 };
 
 /**
-     * Easy on scroll event listener
-     */
+ * Easy on scroll event listener
+ */
 const onscroll = (el, listener) => {
   el.addEventListener("scroll", listener);
 };
 
 /**
-   * Navbar links active state on scroll
-   */
+ * Navbar links active state on scroll
+ */
 let navbarlinks = select("#navbar .scrollto", true);
 const navbarlinksActive = () => {
   let position = window.scrollY + 200;
@@ -140,7 +241,7 @@ const navbarlinksActive = () => {
     if (!section) return;
     if (
       position >= section.offsetTop &&
-        position <= section.offsetTop + section.offsetHeight
+      position <= section.offsetTop + section.offsetHeight
     ) {
       navbarlink.classList.add("active");
     } else {
@@ -152,8 +253,8 @@ window.addEventListener("load", navbarlinksActive);
 onscroll(document, navbarlinksActive);
 
 /**
-   * Scrolls to an element with header offset
-   */
+ * Scrolls to an element with header offset
+ */
 const scrollto = (el) => {
   let header = select("#header");
   let offset = header.offsetHeight;
@@ -170,8 +271,8 @@ const scrollto = (el) => {
 };
 
 /**
-   * Toggle .header-scrolled class to #header when page is scrolled
-   */
+ * Toggle .header-scrolled class to #header when page is scrolled
+ */
 let selectHeader = select("#header");
 if (selectHeader) {
   const headerScrolled = () => {
