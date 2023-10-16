@@ -5,6 +5,13 @@ dotenv.config();
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
+// The code is well-structured and organized, following the rubric that database code in a seperate folder. 
+// Each function handles a specific responsibility related to database operations, making the code easy to understand and maintain.
+// The code effectively manages database connections, and implements necessary CRUD operations for a reservations system.
+// Some improvements can be made: 
+// 1. The code right now export every function in this file. It could be better to put all functions into an object and export that object instead of exporting each functions.
+// 2. The try-catch blocks don't add much value here as they simply rethrow the error without additional logging or manipulation. 
+// It might be beneficial to log errors or perform some custom error handling before rethrowing.
 export const connectDatabase = async () => {
   try {
     const client = new MongoClient(MONGODB_URI, {
